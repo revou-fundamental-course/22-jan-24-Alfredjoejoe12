@@ -1,14 +1,14 @@
-const inputname = document.getElementById('input-name');
+const inputname = document.getElementById('input-nama');
 const inputemail = document.getElementById('input-email');
 
 const button = document.getElementById('tombol-kirim');
 
 button.addEventListener('click', function(){
-    let nama = inputName.value;
+    let nama = inputNama.value;
     let email = inputEmail.value;
 
   if (!nama) {
-    const nameError = document.getElementById('name-error');
+    const nameError = document.getElementById('nama-error');
     nameError.classList.add('error-message');
 
     nameError.innerText = "nama harus diisi!";
@@ -20,4 +20,21 @@ button.addEventListener('click', function(){
 
     emailError.innerText = 'email harus diisi!';
   }
-})
+});
+
+let currentIndex = 0;
+
+const totalSlides = document.querySelectorAll('.slide').length;
+const slideWidth = document.querySelector('.slide').clientWidth;
+const slideContainer = document.getElementById('slides')
+
+function nextSlide(){
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateSlide();
+}
+
+function updateSlide() {
+  slideContainer.style.transform = 'translateX(${-currentIndex * slideWidth}px)'
+}
+
+setInterval(nextSlide, 2000);
