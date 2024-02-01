@@ -1,3 +1,25 @@
+body {
+     width: 100%;
+     top: 0;
+     left: 0;
+     right: 0;
+}
+
+.big-box {
+    display: flex;
+}
+.left-box {
+    width: 50%;
+}
+
+.right-box {
+    width: 50%;
+}
+
+.form-box {
+    background: grey;
+}
+
 .error-message{
     color: red;
     font-size: small;
